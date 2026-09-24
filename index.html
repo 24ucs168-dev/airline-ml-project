@@ -1,0 +1,1636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>K. Yamuna | 3D Personal Portfolio & B.Sc Computer Science Student</title>
+  <meta name="description" content="Official personal portfolio of K. Yamuna, a passionate 3rd-year B.Sc Computer Science student at Muthayammal College of Arts and Science. Explore skills, education, and strengths.">
+  <meta name="keywords" content="K Yamuna, Yamuna, Computer Science Portfolio, B.Sc Computer Science, Muthayammal College, Web Development, HTML, CSS, JavaScript">
+  <meta name="author" content="K. Yamuna">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="K. Yamuna | 3D Personal Portfolio">
+  <meta property="og:description" content="Portfolio of K. Yamuna - B.Sc Computer Science Student. Technical skills, academic qualifications, and verified strengths.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome / Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Three.js (CDN) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Ambient Glowing Background Grid -->
+  <div class="ambient-glow glow-top-left"></div>
+  <div class="ambient-glow glow-bottom-right"></div>
+  <div class="cyber-grid-overlay"></div>
+
+  <!-- Custom Cursor Elements -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- Three.js 3D Background Canvas -->
+  <canvas id="webgl-canvas"></canvas>
+
+  <!-- Sticky Glassmorphic Navbar -->
+  <header class="site-header" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="brand-monogram">
+        <span class="brand-glow">KY</span>
+        <div class="brand-meta">
+          <span class="brand-name">K. YAMUNA</span>
+          <span class="brand-sub">Computer Science</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <ul class="nav-links">
+          <li><a href="#about" class="nav-link"><i class="fa-regular fa-user"></i> About</a></li>
+          <li><a href="#education" class="nav-link"><i class="fa-solid fa-graduation-cap"></i> Education</a></li>
+          <li><a href="#skills" class="nav-link"><i class="fa-solid fa-code"></i> Skills</a></li>
+          <li><a href="#projects" class="nav-link"><i class="fa-solid fa-laptop-code"></i> Projects</a></li>
+          <li><a href="#strengths" class="nav-link"><i class="fa-solid fa-bolt"></i> Strengths</a></li>
+          <li><a href="#declaration" class="nav-link"><i class="fa-solid fa-certificate"></i> Declaration</a></li>
+          <li><a href="#contact" class="nav-link"><i class="fa-regular fa-paper-plane"></i> Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <div class="availability-pill">
+          <span class="pulse-dot"></span>
+          <span>Open to Opportunities</span>
+        </div>
+        <button class="btn btn-sm btn-glass" id="printResumeBtn" title="Print or Save Resume as PDF">
+          <i class="fa-solid fa-print"></i> <span>Print CV</span>
+        </button>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Structure -->
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="hero">
+      <div class="hero-content">
+        <div class="hero-badge-wrap">
+          <span class="hero-badge">
+            <i class="fa-solid fa-sparkles"></i> Welcome to My Interactive 3D Portfolio
+          </span>
+        </div>
+
+        <h1 class="hero-title">
+          Hi, I'm <span class="gradient-text text-glow">K. Yamuna</span>
+        </h1>
+        
+        <p class="hero-subtitle">
+          <span class="typing-target">B.Sc Computer Science Student</span>
+          <span class="subtitle-divider">|</span>
+          <span class="subtitle-location"><i class="fa-solid fa-location-dot"></i> O. Sowdhapuram</span>
+        </p>
+
+        <p class="hero-desc">
+          Motivated, enthusiastic, and passionate about computing technologies. Dedicated to blending solid computer science fundamentals with modern interactive web experiences.
+        </p>
+
+        <!-- Hero CTAs -->
+        <div class="hero-cta-group">
+          <a href="#education" class="btn btn-primary">
+            <span>Explore Qualifications</span>
+            <i class="fa-solid fa-arrow-down-long"></i>
+          </a>
+          <a href="#contact" class="btn btn-glass">
+            <span>Contact Me</span>
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+          <button class="btn btn-secondary copy-email-btn" data-email="yamunakanagaraj9@gmail.com">
+            <i class="fa-regular fa-copy"></i>
+            <span>Copy Email</span>
+          </button>
+        </div>
+
+        <!-- Quick Resume Stat Chips -->
+        <div class="hero-stats-strip">
+          <div class="stat-pill tilt-card">
+            <span class="stat-num">95.4%</span>
+            <span class="stat-label">ML Accuracy</span>
+          </div>
+          <div class="stat-pill tilt-card">
+            <span class="stat-num">75%</span>
+            <span class="stat-label">B.Sc CS (3rd Yr)</span>
+          </div>
+          <div class="stat-pill tilt-card">
+            <span class="stat-num">72%</span>
+            <span class="stat-label">HSC Score</span>
+          </div>
+          <div class="stat-pill tilt-card">
+            <span class="stat-num">68%</span>
+            <span class="stat-label">SSLC Score</span>
+          </div>
+          <div class="stat-pill tilt-card">
+            <span class="stat-num">8+</span>
+            <span class="stat-label">Core Skills</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero 3D Interactive Floating Card -->
+      <div class="hero-3d-visual">
+        <div class="floating-profile-card tilt-card" id="profile3dCard">
+          <div class="card-shimmer"></div>
+          <div class="profile-card-header">
+            <div class="profile-avatar-box">
+              <span class="avatar-initials">KY</span>
+              <div class="avatar-ring"></div>
+            </div>
+            <div class="profile-header-info">
+              <h2 class="profile-card-name">K. Yamuna</h2>
+              <p class="profile-card-role">B.Sc Computer Science Student</p>
+              <span class="profile-card-college"><i class="fa-solid fa-building-columns"></i> Muthayammal College</span>
+            </div>
+          </div>
+
+          <div class="profile-card-divider"></div>
+
+          <div class="profile-details-grid">
+            <div class="detail-item">
+              <span class="detail-label"><i class="fa-regular fa-calendar"></i> Date of Birth</span>
+              <span class="detail-val">08/04/2007</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label"><i class="fa-solid fa-language"></i> Languages</span>
+              <span class="detail-val">Tamil, English</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label"><i class="fa-solid fa-phone"></i> Phone</span>
+              <span class="detail-val">7010645757</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label"><i class="fa-solid fa-map-pin"></i> Place</span>
+              <span class="detail-val">O. Sowdhapuram</span>
+            </div>
+          </div>
+
+          <div class="profile-card-status">
+            <span class="status-indicator"></span>
+            <span>Third Year Undergraduate • 75% Academic Record</span>
+          </div>
+
+          <div class="profile-card-tags">
+            <span class="tech-tag tag-highlight">Python</span>
+            <span class="tech-tag tag-highlight">Machine Learning</span>
+            <span class="tech-tag">HTML</span>
+            <span class="tech-tag">CSS</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">Streamlit</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CAREER OBJECTIVE & ABOUT SECTION -->
+    <section class="section-container" id="about">
+      <div class="section-header">
+        <span class="section-tag"><i class="fa-regular fa-compass"></i> Career Objective</span>
+        <h2 class="section-title">About & <span class="gradient-text">Professional Goal</span></h2>
+        <p class="section-subtitle">Dedicated computer science student seeking to drive value in a forward-thinking organization</p>
+      </div>
+
+      <div class="about-grid">
+        <!-- Objective Card -->
+        <div class="objective-card tilt-card glass-panel">
+          <div class="card-glow-spot"></div>
+          <div class="objective-icon-box">
+            <i class="fa-solid fa-bullseye"></i>
+          </div>
+          <h3 class="card-heading">Career Objective</h3>
+          <blockquote class="objective-quote">
+            "A motivated and enthusiastic B.Sc Computer Science student seeking an opportunity to begin my professional career in a reputed organization. I aim to utilize my technical knowledge, develop new skills, and contribute effectively to the growth of the organization."
+          </blockquote>
+          
+          <div class="objective-highlights">
+            <div class="highlight-item">
+              <i class="fa-solid fa-check-circle"></i>
+              <span>High motivation to learn and apply modern IT solutions</span>
+            </div>
+            <div class="highlight-item">
+              <i class="fa-solid fa-check-circle"></i>
+              <span>Strong commitment to organizational growth and teamwork</span>
+            </div>
+            <div class="highlight-item">
+              <i class="fa-solid fa-check-circle"></i>
+              <span>Building solid computer science & web development foundations</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Personal Information Bento -->
+        <div class="personal-bento glass-panel tilt-card">
+          <div class="card-glow-spot"></div>
+          <h3 class="card-heading"><i class="fa-regular fa-id-card"></i> Personal Profile</h3>
+          
+          <div class="bento-list">
+            <div class="bento-item">
+              <div class="bento-icon"><i class="fa-solid fa-user"></i></div>
+              <div class="bento-info">
+                <span class="bento-label">Full Name</span>
+                <span class="bento-value">K. Yamuna</span>
+              </div>
+            </div>
+
+            <div class="bento-item">
+              <div class="bento-icon"><i class="fa-solid fa-cake-candles"></i></div>
+              <div class="bento-info">
+                <span class="bento-label">Date of Birth</span>
+                <span class="bento-value">08/04/2007</span>
+              </div>
+            </div>
+
+            <div class="bento-item">
+              <div class="bento-icon"><i class="fa-solid fa-comments"></i></div>
+              <div class="bento-info">
+                <span class="bento-label">Languages Known</span>
+                <span class="bento-value">Tamil, English</span>
+              </div>
+            </div>
+
+            <div class="bento-item">
+              <div class="bento-icon"><i class="fa-solid fa-location-crosshairs"></i></div>
+              <div class="bento-info">
+                <span class="bento-label">Residential Place</span>
+                <span class="bento-value">O. Sowdhapuram</span>
+              </div>
+            </div>
+
+            <div class="bento-item">
+              <div class="bento-icon"><i class="fa-solid fa-envelope-open-text"></i></div>
+              <div class="bento-info">
+                <span class="bento-label">Official Email</span>
+                <span class="bento-value text-break">yamunakanagaraj9@gmail.com</span>
+              </div>
+            </div>
+
+            <div class="bento-item">
+              <div class="bento-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+              <div class="bento-info">
+                <span class="bento-label">Phone Contact</span>
+                <span class="bento-value">+91 7010645757</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATIONAL QUALIFICATIONS TIMELINE -->
+    <section class="section-container" id="education">
+      <div class="section-header">
+        <span class="section-tag"><i class="fa-solid fa-graduation-cap"></i> Academic Pathway</span>
+        <h2 class="section-title">Educational <span class="gradient-text">Qualifications</span></h2>
+        <p class="section-subtitle">Consistent academic milestones showcasing discipline and computer science interest</p>
+      </div>
+
+      <div class="education-timeline">
+        <!-- Degree 1: B.Sc Computer Science -->
+        <div class="timeline-card-wrapper">
+          <div class="timeline-node">
+            <span class="node-glow"></span>
+            <i class="fa-solid fa-graduation-cap"></i>
+          </div>
+          <div class="timeline-card glass-panel tilt-card">
+            <div class="timeline-badge-row">
+              <span class="degree-pill active-degree">Current • Third Year</span>
+              <span class="percentage-pill"><i class="fa-solid fa-chart-line"></i> 75% Score</span>
+            </div>
+            
+            <h3 class="degree-title">B.Sc Computer Science</h3>
+            <h4 class="institution-name">
+              <i class="fa-solid fa-school-flag"></i> Muthayammal College of Arts and Science
+            </h4>
+            
+            <p class="degree-desc">
+              Currently pursuing the Third Year of B.Sc Computer Science with a strong academic standing of 75%. Actively gaining knowledge in programming concepts, algorithms, web technologies, and computational problem solving.
+            </p>
+
+            <div class="degree-progress-wrap">
+              <div class="progress-info">
+                <span>Academic Performance</span>
+                <span class="progress-val">75%</span>
+              </div>
+              <div class="progress-bar-bg">
+                <div class="progress-bar-fill fill-cyan" style="width: 75%;"></div>
+              </div>
+            </div>
+
+            <div class="card-footer-tags">
+              <span class="badge-sub">Undergraduate</span>
+              <span class="badge-sub">Third Year</span>
+              <span class="badge-sub">Computer Science</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Degree 2: Higher Secondary (HSC) -->
+        <div class="timeline-card-wrapper">
+          <div class="timeline-node">
+            <span class="node-glow"></span>
+            <i class="fa-solid fa-award"></i>
+          </div>
+          <div class="timeline-card glass-panel tilt-card">
+            <div class="timeline-badge-row">
+              <span class="degree-pill">Completed</span>
+              <span class="percentage-pill"><i class="fa-solid fa-chart-line"></i> 72% Score</span>
+            </div>
+
+            <h3 class="degree-title">Higher Secondary Certificate (HSC)</h3>
+            <h4 class="institution-name">
+              <i class="fa-solid fa-building-columns"></i> Government Girls Higher Secondary School
+            </h4>
+
+            <p class="degree-desc">
+              Completed Higher Secondary Education with an impressive 72% overall score, building strong analytical skills, mathematical reasoning, and discipline.
+            </p>
+
+            <div class="degree-progress-wrap">
+              <div class="progress-info">
+                <span>Academic Performance</span>
+                <span class="progress-val">72%</span>
+              </div>
+              <div class="progress-bar-bg">
+                <div class="progress-bar-fill fill-violet" style="width: 72%;"></div>
+              </div>
+            </div>
+
+            <div class="card-footer-tags">
+              <span class="badge-sub">HSC</span>
+              <span class="badge-sub">State Board</span>
+              <span class="badge-sub">High School</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Degree 3: SSLC -->
+        <div class="timeline-card-wrapper">
+          <div class="timeline-node">
+            <span class="node-glow"></span>
+            <i class="fa-solid fa-book-open"></i>
+          </div>
+          <div class="timeline-card glass-panel tilt-card">
+            <div class="timeline-badge-row">
+              <span class="degree-pill">Completed</span>
+              <span class="percentage-pill"><i class="fa-solid fa-chart-line"></i> 68% Score</span>
+            </div>
+
+            <h3 class="degree-title">Secondary School Leaving Certificate (SSLC)</h3>
+            <h4 class="institution-name">
+              <i class="fa-solid fa-school"></i> Government High School
+            </h4>
+
+            <p class="degree-desc">
+              Successfully completed Secondary School Leaving Certificate (SSLC) with 68%, demonstrating foundational academic diligence and active participation.
+            </p>
+
+            <div class="degree-progress-wrap">
+              <div class="progress-info">
+                <span>Academic Performance</span>
+                <span class="progress-val">68%</span>
+              </div>
+              <div class="progress-bar-bg">
+                <div class="progress-bar-fill fill-emerald" style="width: 68%;"></div>
+              </div>
+            </div>
+
+            <div class="card-footer-tags">
+              <span class="badge-sub">SSLC</span>
+              <span class="badge-sub">Foundation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TECHNICAL SKILLS SECTION -->
+    <section class="section-container" id="skills">
+      <div class="section-header">
+        <span class="section-tag"><i class="fa-solid fa-code"></i> Competencies</span>
+        <h2 class="section-title">Technical <span class="gradient-text">Skills</span></h2>
+        <p class="section-subtitle">Proficiencies in Machine Learning, Python engineering, modern web markup, and productivity suites</p>
+      </div>
+
+      <div class="skills-grid">
+        <!-- Skill: Python & Machine Learning -->
+        <div class="skill-card glass-panel tilt-card">
+          <div class="skill-icon-header">
+            <div class="skill-icon-box python-glow">
+              <i class="fa-brands fa-python"></i>
+            </div>
+            <span class="skill-cat">Machine Learning</span>
+          </div>
+          <h3 class="skill-title">Python & ML</h3>
+          <p class="skill-desc">End-to-end classification pipelines with Scikit-Learn, data modeling, Pandas, and interactive Streamlit web apps.</p>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar-head">
+              <span>Proficiency</span>
+              <span>Advanced</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill fill-python" style="width: 86%;"></div>
+            </div>
+          </div>
+          <div class="skill-tags">
+            <span>Scikit-Learn</span>
+            <span>Random Forest</span>
+            <span>Streamlit</span>
+            <span>Pandas</span>
+          </div>
+        </div>
+
+        <!-- Skill 1: HTML -->
+        <div class="skill-card glass-panel tilt-card">
+          <div class="skill-icon-header">
+            <div class="skill-icon-box html-glow">
+              <i class="fa-brands fa-html5"></i>
+            </div>
+            <span class="skill-cat">Markup</span>
+          </div>
+          <h3 class="skill-title">HTML</h3>
+          <p class="skill-desc">Structuring modern, responsive, and semantic web layouts with accessible DOM standards.</p>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar-head">
+              <span>Proficiency</span>
+              <span>Advanced</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill fill-orange" style="width: 85%;"></div>
+            </div>
+          </div>
+          <div class="skill-tags">
+            <span>Semantic Tags</span>
+            <span>Forms</span>
+            <span>DOM</span>
+          </div>
+        </div>
+
+        <!-- Skill 2: CSS -->
+        <div class="skill-card glass-panel tilt-card">
+          <div class="skill-icon-header">
+            <div class="skill-icon-box css-glow">
+              <i class="fa-brands fa-css3-alt"></i>
+            </div>
+            <span class="skill-cat">Styling</span>
+          </div>
+          <h3 class="skill-title">CSS</h3>
+          <p class="skill-desc">Crafting responsive design with Flexbox, Grid, transitions, animations, and modern glassmorphism.</p>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar-head">
+              <span>Proficiency</span>
+              <span>Advanced</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill fill-blue" style="width: 80%;"></div>
+            </div>
+          </div>
+          <div class="skill-tags">
+            <span>Flexbox</span>
+            <span>CSS Grid</span>
+            <span>Glassmorphism</span>
+          </div>
+        </div>
+
+        <!-- Skill 3: Basic JavaScript -->
+        <div class="skill-card glass-panel tilt-card">
+          <div class="skill-icon-header">
+            <div class="skill-icon-box js-glow">
+              <i class="fa-brands fa-js"></i>
+            </div>
+            <span class="skill-cat">Scripting</span>
+          </div>
+          <h3 class="skill-title">Basic JavaScript</h3>
+          <p class="skill-desc">Event handling, DOM manipulation, interactive animations, and dynamic client-side logic.</p>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar-head">
+              <span>Proficiency</span>
+              <span>Foundational</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill fill-yellow" style="width: 70%;"></div>
+            </div>
+          </div>
+          <div class="skill-tags">
+            <span>DOM Events</span>
+            <span>Functions</span>
+            <span>Logic</span>
+          </div>
+        </div>
+
+        <!-- Skill 4: MS Word -->
+        <div class="skill-card glass-panel tilt-card">
+          <div class="skill-icon-header">
+            <div class="skill-icon-box word-glow">
+              <i class="fa-solid fa-file-word"></i>
+            </div>
+            <span class="skill-cat">Office Suite</span>
+          </div>
+          <h3 class="skill-title">MS Word</h3>
+          <p class="skill-desc">Professional document formatting, technical reporting, layout styling, and documentation.</p>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar-head">
+              <span>Proficiency</span>
+              <span>Proficient</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill fill-word" style="width: 88%;"></div>
+            </div>
+          </div>
+          <div class="skill-tags">
+            <span>Documentation</span>
+            <span>Formatting</span>
+            <span>Reports</span>
+          </div>
+        </div>
+
+        <!-- Skill 5: MS Excel -->
+        <div class="skill-card glass-panel tilt-card">
+          <div class="skill-icon-header">
+            <div class="skill-icon-box excel-glow">
+              <i class="fa-solid fa-file-excel"></i>
+            </div>
+            <span class="skill-cat">Office Suite</span>
+          </div>
+          <h3 class="skill-title">MS Excel</h3>
+          <p class="skill-desc">Data analysis, tabular spreadsheets, mathematical formulas, and structured record organization.</p>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar-head">
+              <span>Proficiency</span>
+              <span>Proficient</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill fill-excel" style="width: 78%;"></div>
+            </div>
+          </div>
+          <div class="skill-tags">
+            <span>Spreadsheets</span>
+            <span>Formulas</span>
+            <span>Data Analysis</span>
+          </div>
+        </div>
+
+        <!-- Skill 6: PowerPoint -->
+        <div class="skill-card glass-panel tilt-card">
+          <div class="skill-icon-header">
+            <div class="skill-icon-box ppt-glow">
+              <i class="fa-solid fa-file-powerpoint"></i>
+            </div>
+            <span class="skill-cat">Office Suite</span>
+          </div>
+          <h3 class="skill-title">PowerPoint</h3>
+          <p class="skill-desc">Creating compelling slide decks, academic presentations, visuals, and conference displays.</p>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar-head">
+              <span>Proficiency</span>
+              <span>Proficient</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill fill-ppt" style="width: 82%;"></div>
+            </div>
+          </div>
+          <div class="skill-tags">
+            <span>Slide Design</span>
+            <span>Visual Decks</span>
+            <span>Transitions</span>
+          </div>
+        </div>
+
+        <!-- Skill 7: Basic Computer Skills -->
+        <div class="skill-card glass-panel tilt-card full-span-mobile">
+          <div class="skill-icon-header">
+            <div class="skill-icon-box pc-glow">
+              <i class="fa-solid fa-desktop"></i>
+            </div>
+            <span class="skill-cat">Foundations</span>
+          </div>
+          <h3 class="skill-title">Basic Computer Skills</h3>
+          <p class="skill-desc">Operating system navigation, file system management, internet research, peripheral operations, and computer fundamentals.</p>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar-head">
+              <span>Proficiency</span>
+              <span>Expert Grounding</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill fill-cyan" style="width: 90%;"></div>
+            </div>
+          </div>
+          <div class="skill-tags">
+            <span>OS Navigation</span>
+            <span>File Management</span>
+            <span>Hardware Basics</span>
+            <span>Internet Tools</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Live Interactive Code Playground Showcase -->
+      <div class="interactive-playground glass-panel">
+        <div class="playground-header">
+          <div class="window-controls">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+          </div>
+          <div class="playground-title">
+            <i class="fa-solid fa-terminal"></i> Live Interactive Skill Playground (HTML • CSS • JS)
+          </div>
+          <span class="live-pill">Interactive Demo</span>
+        </div>
+
+        <div class="playground-body">
+          <div class="playground-code-col">
+            <div class="editor-tab">
+              <span><i class="fa-solid fa-code"></i> live-demo.js</span>
+              <button class="btn-copy-code" id="resetPlaygroundBtn" title="Reset code">
+                <i class="fa-solid fa-rotate-right"></i> Reset
+              </button>
+            </div>
+            <pre class="code-editor"><code id="codeSnippet">// K. Yamuna's Interactive Skill Demonstration
+function introduceStudent() {
+  const candidate = {
+    name: "K. Yamuna",
+    degree: "B.Sc Computer Science",
+    year: "Third Year",
+    college: "Muthayammal College",
+    marks: "75%",
+    status: "Seeking Opportunity"
+  };
+  return `Candidate: ${candidate.name} (${candidate.degree})`;
+}
+
+console.log(introduceStudent());</code></pre>
+            <div class="playground-controls">
+              <button class="btn btn-sm btn-primary" id="runCodeBtn">
+                <i class="fa-solid fa-play"></i> Run Code Simulation
+              </button>
+            </div>
+          </div>
+
+          <div class="playground-output-col">
+            <div class="output-tab">
+              <i class="fa-solid fa-display"></i> Console Output
+            </div>
+            <div class="terminal-screen" id="terminalOutput">
+              <div class="terminal-line text-muted">> Ready to execute... click "Run Code Simulation"</div>
+              <div class="terminal-line text-cyan">> Environment: B.Sc Computer Science Runtime v2026</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED PROJECTS SECTION -->
+    <section class="section-container" id="projects">
+      <div class="section-header">
+        <span class="section-tag"><i class="fa-solid fa-microchip"></i> Machine Learning Engineering</span>
+        <h2 class="section-title">Featured <span class="gradient-text">Project</span></h2>
+        <p class="section-subtitle">Production-grade machine learning system and interactive Streamlit web dashboard for airline customer satisfaction intelligence</p>
+      </div>
+
+      <!-- Project Showcase Container -->
+      <div class="project-showcase glass-panel tilt-card">
+        <div class="card-glow-spot"></div>
+
+        <!-- Project Visual Preview Banner -->
+        <div class="project-preview-wrap">
+          <img src="skypulse-preview.jpg" alt="SkyPulse Airline Customer Satisfaction ML Dashboard Preview" class="project-preview-img" loading="lazy">
+          <div class="project-preview-overlay">
+            <div class="preview-badges-top">
+              <span class="preview-live-badge"><span class="pulse-dot-green"></span> Production-Ready Streamlit App</span>
+              <span class="preview-kpi-pill"><i class="fa-solid fa-chart-line"></i> 95.43% Accuracy</span>
+            </div>
+            <div class="preview-meta-bottom">
+              <span class="preview-tag"><i class="fa-brands fa-python"></i> Scikit-Learn Pipeline</span>
+              <span class="preview-tag"><i class="fa-solid fa-database"></i> 129,880 Passengers</span>
+              <span class="preview-tag"><i class="fa-solid fa-diagram-project"></i> Random Forest Ensemble</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Hero Header -->
+        <div class="project-hero-header">
+          <div class="project-title-area">
+            <div class="project-badge-row">
+              <span class="badge-pill badge-primary"><i class="fa-solid fa-plane-departure"></i> Aviation AI</span>
+              <span class="badge-pill badge-status"><span class="pulse-dot-green"></span> Live ML Pipeline</span>
+              <span class="badge-pill badge-outline"><i class="fa-brands fa-python"></i> Python 3.10+ / 3.13</span>
+            </div>
+            <h3 class="project-main-title">SkyPulse — Airline Customer Satisfaction Prediction</h3>
+            <p class="project-tagline">
+              A production-ready Machine Learning web application and data pipeline built with Python, Scikit-Learn, and Streamlit. SkyPulse automatically ingests airline customer sentiment and flight performance data, builds an end-to-end preprocessing and ensemble learning pipeline using Random Forest, and provides an interactive web interface for real-time predictions and model exploration.
+            </p>
+          </div>
+
+          <div class="project-actions-area">
+            <a href="https://github.com/24ucs168-dev/airline-ml-project" target="_blank" rel="noopener noreferrer" class="btn btn-primary" title="View Source on GitHub">
+              <i class="fa-brands fa-github"></i>
+              <span>GitHub Repo</span>
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+            <button class="btn btn-secondary copy-clone-btn" data-clone="git clone https://github.com/24ucs168-dev/airline-ml-project.git" title="Copy git clone command">
+              <i class="fa-solid fa-clone"></i>
+              <span>Clone Repo</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Metric KPI Cards Bar -->
+        <div class="project-kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-icon-wrap kpi-cyan">
+              <i class="fa-solid fa-bullseye"></i>
+            </div>
+            <div class="kpi-info">
+              <span class="kpi-val">95.43%</span>
+              <span class="kpi-label">Test Set Accuracy</span>
+              <span class="kpi-sub">On 25,976 holdout passengers</span>
+            </div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-icon-wrap kpi-violet">
+              <i class="fa-solid fa-chart-area"></i>
+            </div>
+            <div class="kpi-info">
+              <span class="kpi-val">99.22%</span>
+              <span class="kpi-label">ROC-AUC Score</span>
+              <span class="kpi-sub">High class separability</span>
+            </div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-icon-wrap kpi-emerald">
+              <i class="fa-solid fa-scale-balanced"></i>
+            </div>
+            <div class="kpi-info">
+              <span class="kpi-val">95.48%</span>
+              <span class="kpi-label">Weighted Precision</span>
+              <span class="kpi-sub">F1-Score: 95.43% | Recall: 95.43%</span>
+            </div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-icon-wrap kpi-amber">
+              <i class="fa-solid fa-database"></i>
+            </div>
+            <div class="kpi-info">
+              <span class="kpi-val">129,880</span>
+              <span class="kpi-label">Passenger Records</span>
+              <span class="kpi-sub">22 Features • Binary Target</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Project Tabs Header -->
+        <div class="project-tabs-nav">
+          <button class="project-tab-btn active" data-tab="tab-simulator">
+            <i class="fa-solid fa-sliders"></i>
+            <span>Interactive Simulator</span>
+          </button>
+          <button class="project-tab-btn" data-tab="tab-pipeline">
+            <i class="fa-solid fa-diagram-project"></i>
+            <span>ML Pipeline & Architecture</span>
+          </button>
+          <button class="project-tab-btn" data-tab="tab-features">
+            <i class="fa-solid fa-chart-simple"></i>
+            <span>Top Predictive Features</span>
+          </button>
+          <button class="project-tab-btn" data-tab="tab-tech">
+            <i class="fa-solid fa-folder-tree"></i>
+            <span>Project Structure & Code</span>
+          </button>
+        </div>
+
+        <!-- Tab 1: Interactive Prediction Simulator -->
+        <div class="project-tab-panel active" id="tab-simulator">
+          <div class="simulator-intro">
+            <div>
+              <h4 class="sim-title"><i class="fa-solid fa-brain"></i> Real-Time Customer Satisfaction Simulator</h4>
+              <p class="sim-subtitle">Simulate how the SkyPulse Random Forest model evaluates passenger sentiments and flight attributes in real time.</p>
+            </div>
+            <!-- Preset Buttons -->
+            <div class="sim-presets">
+              <span class="preset-label">Quick Presets:</span>
+              <button class="btn-preset active" id="presetHappy">
+                <i class="fa-solid fa-star"></i> Happy Business Traveler
+              </button>
+              <button class="btn-preset" id="presetFrustrated">
+                <i class="fa-solid fa-triangle-exclamation"></i> Frustrated Economy Traveler
+              </button>
+              <button class="btn-preset" id="presetRandom">
+                <i class="fa-solid fa-shuffle"></i> Random Sample
+              </button>
+            </div>
+          </div>
+
+          <div class="simulator-layout">
+            <!-- Controls Form -->
+            <div class="sim-controls-card">
+              <div class="sim-group">
+                <label class="sim-label">Passenger Profile & Class</label>
+                <div class="sim-options-row">
+                  <div class="select-wrapper">
+                    <span class="select-label">Class</span>
+                    <select id="simTravelClass" class="sim-select">
+                      <option value="Business" selected>Business Class</option>
+                      <option value="Eco">Economy (Eco)</option>
+                      <option value="Eco Plus">Eco Plus</option>
+                    </select>
+                  </div>
+                  <div class="select-wrapper">
+                    <span class="select-label">Travel Type</span>
+                    <select id="simTravelType" class="sim-select">
+                      <option value="Business travel" selected>Business Travel</option>
+                      <option value="Personal Travel">Personal Travel</option>
+                    </select>
+                  </div>
+                  <div class="select-wrapper">
+                    <span class="select-label">Customer</span>
+                    <select id="simCustomerType" class="sim-select">
+                      <option value="Loyal Customer" selected>Loyal Customer</option>
+                      <option value="disloyal Customer">Disloyal Customer</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sim-sliders-grid">
+                <div class="slider-field">
+                  <div class="slider-header">
+                    <span><i class="fa-solid fa-tv"></i> Inflight Entertainment</span>
+                    <span class="slider-val" id="valEntertainment">5 / 5</span>
+                  </div>
+                  <input type="range" min="0" max="5" value="5" step="1" id="sliderEntertainment" class="sim-range">
+                </div>
+
+                <div class="slider-field">
+                  <div class="slider-header">
+                    <span><i class="fa-solid fa-couch"></i> Seat Comfort</span>
+                    <span class="slider-val" id="valSeat">5 / 5</span>
+                  </div>
+                  <input type="range" min="0" max="5" value="5" step="1" id="sliderSeat" class="sim-range">
+                </div>
+
+                <div class="slider-field">
+                  <div class="slider-header">
+                    <span><i class="fa-solid fa-laptop"></i> Online Booking & Support</span>
+                    <span class="slider-val" id="valOnline">5 / 5</span>
+                  </div>
+                  <input type="range" min="0" max="5" value="5" step="1" id="sliderOnline" class="sim-range">
+                </div>
+
+                <div class="slider-field">
+                  <div class="slider-header">
+                    <span><i class="fa-solid fa-utensils"></i> Food & Drink</span>
+                    <span class="slider-val" id="valFood">4 / 5</span>
+                  </div>
+                  <input type="range" min="0" max="5" value="4" step="1" id="sliderFood" class="sim-range">
+                </div>
+
+                <div class="slider-field">
+                  <div class="slider-header">
+                    <span><i class="fa-solid fa-plane"></i> Flight Distance (miles)</span>
+                    <span class="slider-val" id="valDistance">2,150 mi</span>
+                  </div>
+                  <input type="range" min="100" max="4500" value="2150" step="50" id="sliderDistance" class="sim-range">
+                </div>
+
+                <div class="slider-field">
+                  <div class="slider-header">
+                    <span><i class="fa-solid fa-clock"></i> Flight Delays (Departure/Arrival)</span>
+                    <span class="slider-val" id="valDelay">5 min</span>
+                  </div>
+                  <input type="range" min="0" max="180" value="5" step="5" id="sliderDelay" class="sim-range">
+                </div>
+              </div>
+            </div>
+
+            <!-- Real-time Prediction Output Card -->
+            <div class="sim-output-card">
+              <div class="output-gauge-header">
+                <span class="output-tag"><i class="fa-solid fa-microchip"></i> Model Inference Output</span>
+                <span class="output-runtime"><i class="fa-solid fa-bolt"></i> Latency &lt; 12ms</span>
+              </div>
+
+              <div class="prediction-result-box" id="predictionResultBox">
+                <div class="result-badge-wrap">
+                  <div class="result-icon satisfied" id="resultStatusIcon">
+                    <i class="fa-solid fa-face-smile"></i>
+                  </div>
+                  <div class="result-text-group">
+                    <span class="result-verdict-label">Predicted Classification:</span>
+                    <h3 class="result-verdict text-emerald" id="resultVerdict">Satisfied</h3>
+                  </div>
+                </div>
+
+                <div class="confidence-meter-wrap">
+                  <div class="conf-header">
+                    <span>Satisfaction Confidence</span>
+                    <span class="conf-percentage" id="confPercentage">96.2%</span>
+                  </div>
+                  <div class="conf-bar-track">
+                    <div class="conf-bar-fill fill-satisfied" id="confBarFill" style="width: 96.2%;"></div>
+                  </div>
+                </div>
+
+                <div class="probability-distribution">
+                  <div class="prob-row">
+                    <span class="prob-label"><i class="fa-regular fa-circle-check text-emerald"></i> Probability (Satisfied):</span>
+                    <span class="prob-val text-emerald" id="probSatisfied">96.2%</span>
+                  </div>
+                  <div class="prob-row">
+                    <span class="prob-label"><i class="fa-regular fa-circle-xmark text-rose"></i> Probability (Dissatisfied):</span>
+                    <span class="prob-val text-rose" id="probDissatisfied">3.8%</span>
+                  </div>
+                </div>
+
+                <div class="inference-summary-note" id="inferenceNote">
+                  High ratings for Inflight Entertainment and Seat Comfort combine with business travel status and zero flight delays to yield a high-confidence satisfied verdict.
+                </div>
+              </div>
+
+              <div class="sim-footer-links">
+                <a href="https://github.com/24ucs168-dev/airline-ml-project" target="_blank" rel="noopener noreferrer" class="link-subtle">
+                  <i class="fa-brands fa-github"></i> Run full Streamlit web app locally
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 2: ML Pipeline & Architecture -->
+        <div class="project-tab-panel" id="tab-pipeline">
+          <div class="pipeline-flow-grid">
+            <div class="pipeline-step-card">
+              <div class="step-num">01</div>
+              <div class="step-icon"><i class="fa-solid fa-file-csv"></i></div>
+              <h4>Data Ingestion</h4>
+              <p>Loads 129,880 passenger records across 22 attributes from <code>Airline_customer_satisfaction.csv</code>.</p>
+              <div class="step-tags">
+                <span>129.8K Rows</span>
+                <span>21 Features</span>
+                <span>1 Target</span>
+              </div>
+            </div>
+
+            <div class="pipeline-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+
+            <div class="pipeline-step-card">
+              <div class="step-num">02</div>
+              <div class="step-icon"><i class="fa-solid fa-filter"></i></div>
+              <h4>ColumnTransformer</h4>
+              <p>Median imputation for 18 numerical attributes (handling 393 missing arrival delay values) & OneHotEncoder for categoricals.</p>
+              <div class="step-tags">
+                <span>SimpleImputer</span>
+                <span>OneHotEncoder</span>
+                <span>Pipeline</span>
+              </div>
+            </div>
+
+            <div class="pipeline-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+
+            <div class="pipeline-step-card">
+              <div class="step-num">03</div>
+              <div class="step-icon"><i class="fa-solid fa-network-wired"></i></div>
+              <h4>Random Forest</h4>
+              <p>Stratified 80/20 train-test split. Ensemble trees optimized with hyperparameter tuning to minimize Gini impurity.</p>
+              <div class="step-tags">
+                <span>80/20 Stratified</span>
+                <span>Random Forest</span>
+                <span>Joblib Export</span>
+              </div>
+            </div>
+
+            <div class="pipeline-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+
+            <div class="pipeline-step-card highlight-step">
+              <div class="step-num">04</div>
+              <div class="step-icon"><i class="fa-solid fa-display"></i></div>
+              <h4>Streamlit App</h4>
+              <p>4 integrated views: Executive Dashboard, Dataset Explorer, Model Training studio, and Real-time Prediction engine.</p>
+              <div class="step-tags">
+                <span>Streamlit</span>
+                <span>Plotly</span>
+                <span>Interactive UI</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="architecture-details-panel">
+            <div class="arch-col">
+              <h5><i class="fa-solid fa-check-double"></i> Key Engineering Highlights</h5>
+              <ul class="arch-list">
+                <li><strong>No Data Leakage:</strong> Preprocessing transformers fit strictly on the training partition and transformed on test sets.</li>
+                <li><strong>Robust Missing Value Handling:</strong> Automated median imputation handles edge cases in arrival delays seamlessly.</li>
+                <li><strong>High Generalizability:</strong> Evaluated on 25,976 unseen holdout passengers with balanced precision (95.48%) and recall (95.43%).</li>
+                <li><strong>One-Click Launcher:</strong> Includes <code>run_app.bat</code> for instant Windows execution without manual setup.</li>
+              </ul>
+            </div>
+            <div class="arch-col">
+              <h5><i class="fa-solid fa-chart-pie"></i> Dataset Class Distribution (129,880 Rows)</h5>
+              <div class="dataset-distribution-bar">
+                <div class="dist-segment dist-satisfied" style="width: 54.7%;" title="Satisfied: 71,087 (54.7%)">
+                  <span>Satisfied 54.7%</span>
+                </div>
+                <div class="dist-segment dist-dissatisfied" style="width: 45.3%;" title="Dissatisfied: 58,793 (45.3%)">
+                  <span>Dissatisfied 45.3%</span>
+                </div>
+              </div>
+              <div class="dist-legend">
+                <span class="legend-item"><span class="legend-dot green"></span> Satisfied: 71,087 records (54.7%)</span>
+                <span class="legend-item"><span class="legend-dot red"></span> Dissatisfied: 58,793 records (45.3%)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 3: Top Feature Importance -->
+        <div class="project-tab-panel" id="tab-features">
+          <div class="features-breakdown-intro">
+            <h4><i class="fa-solid fa-ranking-star"></i> Top 5 Predictive Customer Satisfaction Drivers</h4>
+            <p>Extracted via Gini importance reduction across the Random Forest ensemble on holdout test data:</p>
+          </div>
+
+          <div class="feature-bars-container">
+            <div class="feat-bar-row">
+              <div class="feat-info">
+                <span class="feat-rank">#1</span>
+                <span class="feat-title"><i class="fa-solid fa-film"></i> Inflight Entertainment</span>
+                <span class="feat-note">Highest Gini importance reduction; primary driver of passenger journey perception.</span>
+              </div>
+              <div class="feat-progress-box">
+                <div class="feat-bar-fill fill-cyan" style="width: 25.4%;"></div>
+                <span class="feat-percentage">25.4%</span>
+              </div>
+            </div>
+
+            <div class="feat-bar-row">
+              <div class="feat-info">
+                <span class="feat-rank">#2</span>
+                <span class="feat-title"><i class="fa-solid fa-couch"></i> Seat Comfort</span>
+                <span class="feat-note">Fundamental physical satisfaction indicator across short and long-haul flights.</span>
+              </div>
+              <div class="feat-progress-box">
+                <div class="feat-bar-fill fill-violet" style="width: 21.8%;"></div>
+                <span class="feat-percentage">21.8%</span>
+              </div>
+            </div>
+
+            <div class="feat-bar-row">
+              <div class="feat-info">
+                <span class="feat-rank">#3</span>
+                <span class="feat-title"><i class="fa-solid fa-globe"></i> Ease of Online Booking</span>
+                <span class="feat-note">Pre-flight digital touchpoint directly setting customer trust and satisfaction expectations.</span>
+              </div>
+              <div class="feat-progress-box">
+                <div class="feat-bar-fill fill-emerald" style="width: 17.6%;"></div>
+                <span class="feat-percentage">17.6%</span>
+              </div>
+            </div>
+
+            <div class="feat-bar-row">
+              <div class="feat-info">
+                <span class="feat-rank">#4</span>
+                <span class="feat-title"><i class="fa-solid fa-headset"></i> Online Support</span>
+                <span class="feat-note">Critical customer support touchpoint for issue resolution, guidance, and assistance.</span>
+              </div>
+              <div class="feat-progress-box">
+                <div class="feat-bar-fill fill-amber" style="width: 14.9%;"></div>
+                <span class="feat-percentage">14.9%</span>
+              </div>
+            </div>
+
+            <div class="feat-bar-row">
+              <div class="feat-info">
+                <span class="feat-rank">#5</span>
+                <span class="feat-title"><i class="fa-solid fa-utensils"></i> Food and Drink</span>
+                <span class="feat-note">Strong correlation with premium perception and cabin crew service delivery.</span>
+              </div>
+              <div class="feat-progress-box">
+                <div class="feat-bar-fill fill-orange" style="width: 11.2%;"></div>
+                <span class="feat-percentage">11.2%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 4: Project Structure & Code -->
+        <div class="project-tab-panel" id="tab-tech">
+          <div class="code-structure-grid">
+            <div class="structure-tree-card">
+              <div class="tree-header">
+                <i class="fa-solid fa-folder-tree"></i> Repository Architecture
+              </div>
+              <pre class="tree-code"><code>airline-ml-project/
+├── data/
+│   └── Airline_customer_satisfaction.csv  <span class="tree-comment"># 129,880 records</span>
+├── models/
+│   ├── random_forest_model.pkl           <span class="tree-comment"># Trained Scikit-Learn pipeline</span>
+│   └── model_metadata.json               <span class="tree-comment"># Accuracy (95.43%), hyperparameters</span>
+├── src/
+│   ├── __init__.py
+│   ├── data_preprocessing.py            <span class="tree-comment"># Ingestion, validation & ColumnTransformer</span>
+│   ├── train_model.py                   <span class="tree-comment"># Hyperparameter tuning & model export</span>
+│   ├── evaluation.py                    <span class="tree-comment"># Confusion matrix, ROC-AUC, metrics</span>
+│   └── predict.py                       <span class="tree-comment"># Real-time inference engine & presets</span>
+├── app.py                               <span class="tree-comment"># Streamlit interactive multi-view UI</span>
+├── requirements.txt                     <span class="tree-comment"># Python dependencies</span>
+├── run_app.bat                          <span class="tree-comment"># Windows 1-click execution script</span>
+└── README.md                            <span class="tree-comment"># Full system documentation</span></code></pre>
+            </div>
+
+            <div class="tech-stack-details-card">
+              <h4><i class="fa-solid fa-cubes"></i> Technologies & Tools</h4>
+              <div class="tech-chips-wall">
+                <span class="tech-pill"><i class="fa-brands fa-python"></i> Python 3.10+</span>
+                <span class="tech-pill"><i class="fa-solid fa-gears"></i> Scikit-Learn</span>
+                <span class="tech-pill"><i class="fa-solid fa-chart-line"></i> Streamlit</span>
+                <span class="tech-pill"><i class="fa-solid fa-tree"></i> Random Forest</span>
+                <span class="tech-pill"><i class="fa-solid fa-table"></i> Pandas</span>
+                <span class="tech-pill"><i class="fa-solid fa-calculator"></i> NumPy</span>
+                <span class="tech-pill"><i class="fa-solid fa-chart-pie"></i> Plotly</span>
+                <span class="tech-pill"><i class="fa-solid fa-chart-simple"></i> Matplotlib & Seaborn</span>
+                <span class="tech-pill"><i class="fa-solid fa-floppy-disk"></i> Joblib</span>
+              </div>
+
+              <div class="quick-terminal-box">
+                <div class="terminal-tab-head">
+                  <span><i class="fa-solid fa-terminal"></i> Quick Launch Instructions</span>
+                  <button class="btn-copy-code copy-clone-btn" data-clone="git clone https://github.com/24ucs168-dev/airline-ml-project.git">
+                    <i class="fa-regular fa-copy"></i> Copy Clone
+                  </button>
+                </div>
+                <pre class="quick-terminal-pre"><code>git clone https://github.com/24ucs168-dev/airline-ml-project.git
+cd airline-ml-project
+pip install -r requirements.txt
+streamlit run app.py</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STRENGTHS & CORE TRAITS SECTION -->
+    <section class="section-container" id="strengths">
+      <div class="section-header">
+        <span class="section-tag"><i class="fa-solid fa-sparkles"></i> Work Ethic & Soft Skills</span>
+        <h2 class="section-title">Core <span class="gradient-text">Strengths</span></h2>
+        <p class="section-subtitle">Key personal strengths driving high performance, continuous learning, and teamwork</p>
+      </div>
+
+      <div class="strengths-bento">
+        <!-- Strength 1 -->
+        <div class="strength-box glass-panel tilt-card">
+          <div class="strength-icon-circle violet-ring">
+            <i class="fa-solid fa-bolt"></i>
+          </div>
+          <h3 class="strength-name">Quick Learner</h3>
+          <p class="strength-description">
+            High aptitude for absorbing new programming languages, software paradigms, and evolving tech stacks with speed and curiosity.
+          </p>
+          <div class="strength-meter">
+            <span class="meter-tag">Adaptability</span>
+            <span class="meter-stars">★★★★★</span>
+          </div>
+        </div>
+
+        <!-- Strength 2 -->
+        <div class="strength-box glass-panel tilt-card">
+          <div class="strength-icon-circle cyan-ring">
+            <i class="fa-solid fa-gears"></i>
+          </div>
+          <h3 class="strength-name">Hardworking</h3>
+          <p class="strength-description">
+            Strong commitment to excellence, thoroughness in academic assignments, and consistent effort to overcome difficult technical challenges.
+          </p>
+          <div class="strength-meter">
+            <span class="meter-tag">Diligence</span>
+            <span class="meter-stars">★★★★★</span>
+          </div>
+        </div>
+
+        <!-- Strength 3 -->
+        <div class="strength-box glass-panel tilt-card">
+          <div class="strength-icon-circle emerald-ring">
+            <i class="fa-solid fa-sun"></i>
+          </div>
+          <h3 class="strength-name">Positive Attitude</h3>
+          <p class="strength-description">
+            Approaches every challenge with enthusiasm, open-minded optimism, and resilience in high-pressure project deadlines.
+          </p>
+          <div class="strength-meter">
+            <span class="meter-tag">Mindset</span>
+            <span class="meter-stars">★★★★★</span>
+          </div>
+        </div>
+
+        <!-- Strength 4 -->
+        <div class="strength-box glass-panel tilt-card">
+          <div class="strength-icon-circle amber-ring">
+            <i class="fa-solid fa-people-group"></i>
+          </div>
+          <h3 class="strength-name">Teamwork</h3>
+          <p class="strength-description">
+            Active collaborator with clear communication skills, empathetic listener, and supportive peer in college practicals and group tasks.
+          </p>
+          <div class="strength-meter">
+            <span class="meter-tag">Collaboration</span>
+            <span class="meter-stars">★★★★★</span>
+          </div>
+        </div>
+
+        <!-- Strength 5 -->
+        <div class="strength-box glass-panel tilt-card">
+          <div class="strength-icon-circle blue-ring">
+            <i class="fa-solid fa-clock-rotate-left"></i>
+          </div>
+          <h3 class="strength-name">Time Management</h3>
+          <p class="strength-description">
+            Disciplined organization of coursework, meeting academic deadlines, and balancing multiple priorities with efficiency.
+          </p>
+          <div class="strength-meter">
+            <span class="meter-tag">Punctuality</span>
+            <span class="meter-stars">★★★★★</span>
+          </div>
+        </div>
+
+        <!-- Strength 6 -->
+        <div class="strength-box glass-panel tilt-card">
+          <div class="strength-icon-circle rose-ring">
+            <i class="fa-solid fa-brain"></i>
+          </div>
+          <h3 class="strength-name">Problem-Solving Skills</h3>
+          <p class="strength-description">
+            Analytical thinker capable of breaking complex problems down into structured, logical, and code-ready components.
+          </p>
+          <div class="strength-meter">
+            <span class="meter-tag">Logic & Analysis</span>
+            <span class="meter-stars">★★★★★</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OFFICIAL DECLARATION CERTIFICATE -->
+    <section class="section-container" id="declaration">
+      <div class="section-header">
+        <span class="section-tag"><i class="fa-solid fa-stamp"></i> Authenticity Guarantee</span>
+        <h2 class="section-title">Official <span class="gradient-text">Declaration</span></h2>
+        <p class="section-subtitle">Verified statement from K. Yamuna regarding accuracy of credentials</p>
+      </div>
+
+      <div class="declaration-wrapper">
+        <div class="declaration-certificate glass-panel tilt-card">
+          <div class="cert-corner top-left"></div>
+          <div class="cert-corner top-right"></div>
+          <div class="cert-corner bottom-left"></div>
+          <div class="cert-corner bottom-right"></div>
+
+          <div class="cert-watermark"><i class="fa-solid fa-certificate"></i></div>
+
+          <div class="cert-header">
+            <div class="cert-seal">
+              <i class="fa-solid fa-award"></i>
+            </div>
+            <div class="cert-title-group">
+              <span class="cert-sub">VERIFIED PROFESSIONAL RECORD</span>
+              <h3 class="cert-heading">Declaration of Authenticity</h3>
+            </div>
+          </div>
+
+          <p class="declaration-statement">
+            "I hereby declare that the information provided above is true and correct to the best of my knowledge."
+          </p>
+
+          <div class="declaration-meta-grid">
+            <div class="decl-meta-item">
+              <span class="meta-label"><i class="fa-solid fa-location-dot"></i> Place</span>
+              <span class="meta-value">O. Sowdhapuram</span>
+            </div>
+
+            <div class="decl-meta-item">
+              <span class="meta-label"><i class="fa-regular fa-calendar-check"></i> Date</span>
+              <span class="meta-value">23/09/2026</span>
+            </div>
+
+            <div class="decl-meta-item signature-box">
+              <span class="meta-label"><i class="fa-solid fa-signature"></i> Candidate Signature</span>
+              <div class="signature-cursive">K. Yamuna</div>
+              <span class="meta-sub">K. YAMUNA</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT & CONNECT HUB -->
+    <section class="section-container" id="contact">
+      <div class="section-header">
+        <span class="section-tag"><i class="fa-regular fa-envelope"></i> Let's Connect</span>
+        <h2 class="section-title">Get In <span class="gradient-text">Touch</span></h2>
+        <p class="section-subtitle">Open for entry-level positions, internships, and professional career opportunities</p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Contact Information Cards -->
+        <div class="contact-info-col">
+          <!-- Card: Phone -->
+          <div class="contact-card glass-panel tilt-card">
+            <div class="contact-icon phone-glow">
+              <i class="fa-solid fa-phone"></i>
+            </div>
+            <div class="contact-details">
+              <span class="contact-type">Direct Phone Call</span>
+              <a href="tel:7010645757" class="contact-value link-highlight">+91 7010645757</a>
+              <span class="contact-note">Available during standard business hours</span>
+            </div>
+            <button class="btn-copy-chip copy-phone-btn" data-phone="7010645757" title="Copy Phone Number">
+              <i class="fa-regular fa-copy"></i>
+            </button>
+          </div>
+
+          <!-- Card: Email -->
+          <div class="contact-card glass-panel tilt-card">
+            <div class="contact-icon mail-glow">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div class="contact-details">
+              <span class="contact-type">Official Email</span>
+              <a href="mailto:yamunakanagaraj9@gmail.com" class="contact-value link-highlight">yamunakanagaraj9@gmail.com</a>
+              <span class="contact-note">Guaranteed quick response</span>
+            </div>
+            <button class="btn-copy-chip copy-email-btn" data-email="yamunakanagaraj9@gmail.com" title="Copy Email">
+              <i class="fa-regular fa-copy"></i>
+            </button>
+          </div>
+
+          <!-- Card: Place -->
+          <div class="contact-card glass-panel tilt-card">
+            <div class="contact-icon loc-glow">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <div class="contact-details">
+              <span class="contact-type">Location / Residence</span>
+              <span class="contact-value">O. Sowdhapuram</span>
+              <span class="contact-note">Tamil Nadu, India</span>
+            </div>
+            <div class="verified-loc-badge">
+              <i class="fa-solid fa-check"></i>
+            </div>
+          </div>
+
+          <!-- Quick Actions Panel -->
+          <div class="quick-actions-panel glass-panel">
+            <h4><i class="fa-solid fa-wand-magic-sparkles"></i> Instant Actions</h4>
+            <div class="action-btn-group">
+              <button class="btn btn-secondary btn-full copy-email-btn" data-email="yamunakanagaraj9@gmail.com">
+                <i class="fa-regular fa-copy"></i> Copy Email Address
+              </button>
+              <button class="btn btn-secondary btn-full copy-phone-btn" data-phone="7010645757">
+                <i class="fa-solid fa-phone"></i> Copy Phone Number
+              </button>
+              <button class="btn btn-glass btn-full" id="triggerPrintBtn">
+                <i class="fa-solid fa-file-arrow-down"></i> Print / Save Portfolio CV
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Direct Message Form -->
+        <div class="contact-form-col">
+          <div class="form-container glass-panel">
+            <div class="form-header">
+              <h3 class="form-title">Send a Direct Message</h3>
+              <p class="form-subtitle">Fill in the fields below to initiate communication directly with K. Yamuna</p>
+            </div>
+
+            <form id="portfolioContactForm" class="contact-form">
+              <div class="form-group">
+                <label for="senderName" class="form-label">Your Name / Organization <span class="required">*</span></label>
+                <div class="input-wrap">
+                  <i class="fa-regular fa-user input-icon"></i>
+                  <input type="text" id="senderName" class="form-input" placeholder="e.g. Talent Acquisition / Tech Recruiter" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="senderEmail" class="form-label">Your Email Address <span class="required">*</span></label>
+                <div class="input-wrap">
+                  <i class="fa-regular fa-envelope input-icon"></i>
+                  <input type="email" id="senderEmail" class="form-input" placeholder="e.g. recruiter@company.com" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="messageSubject" class="form-label">Subject</label>
+                <div class="input-wrap">
+                  <i class="fa-regular fa-bookmark input-icon"></i>
+                  <input type="text" id="messageSubject" class="form-input" placeholder="Job Opportunity / Interview Invitation" value="Opportunity for B.Sc Computer Science Graduate">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="messageBody" class="form-label">Message <span class="required">*</span></label>
+                <div class="input-wrap text-wrap">
+                  <i class="fa-regular fa-comment-dots input-icon textarea-icon"></i>
+                  <textarea id="messageBody" class="form-input form-textarea" rows="4" placeholder="Hello K. Yamuna, we reviewed your portfolio and would like to discuss an opportunity..." required></textarea>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-full submit-btn">
+                <span>Dispatch Email Message</span>
+                <i class="fa-solid fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- PRINTABLE RESUME TEMPLATE (Hidden from normal view, formatted exclusively for Print/PDF) -->
+  <div class="printable-resume-container" id="printableResume">
+    <div class="print-header">
+      <div class="print-name-col">
+        <h1 class="print-name">K. YAMUNA</h1>
+        <p class="print-tagline">B.Sc Computer Science Undergraduate</p>
+      </div>
+      <div class="print-contact-col">
+        <p><strong>Phone:</strong> 7010645757</p>
+        <p><strong>Email:</strong> yamunakanagaraj9@gmail.com</p>
+        <p><strong>Place:</strong> O. Sowdhapuram</p>
+      </div>
+    </div>
+
+    <hr class="print-divider">
+
+    <section class="print-section">
+      <h2 class="print-sec-title">CAREER OBJECTIVE</h2>
+      <p class="print-text">
+        A motivated and enthusiastic B.Sc Computer Science student seeking an opportunity to begin my professional career in a reputed organization. I aim to utilize my technical knowledge, develop new skills, and contribute effectively to the growth of the organization.
+      </p>
+    </section>
+
+    <section class="print-section">
+      <h2 class="print-sec-title">EDUCATIONAL QUALIFICATION</h2>
+      <table class="print-table">
+        <thead>
+          <tr>
+            <th>Course / Level</th>
+            <th>Institution</th>
+            <th>Year / Status</th>
+            <th>Percentage</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>B.Sc Computer Science</strong></td>
+            <td>Muthayammal College of Arts and Science</td>
+            <td>Third Year</td>
+            <td><strong>75%</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Higher Secondary (HSC)</strong></td>
+            <td>Government Girls Higher Secondary School</td>
+            <td>Completed</td>
+            <td><strong>72%</strong></td>
+          </tr>
+          <tr>
+            <td><strong>SSLC</strong></td>
+            <td>Government High School</td>
+            <td>Completed</td>
+            <td><strong>68%</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="print-section">
+      <h2 class="print-sec-title">TECHNICAL SKILLS</h2>
+      <div class="print-skills-grid">
+        <span>• Python & Machine Learning</span>
+        <span>• Scikit-Learn & Streamlit</span>
+        <span>• HTML</span>
+        <span>• CSS</span>
+        <span>• Basic JavaScript</span>
+        <span>• MS Word</span>
+        <span>• MS Excel</span>
+        <span>• PowerPoint</span>
+        <span>• Basic Computer Skills</span>
+      </div>
+    </section>
+
+    <section class="print-section">
+      <h2 class="print-sec-title">KEY ENGINEERING PROJECTS</h2>
+      <div class="print-project-item">
+        <div class="print-proj-header">
+          <strong>SkyPulse — Airline Customer Satisfaction Prediction & ML Web App</strong>
+          <span class="print-proj-tech">Python • Scikit-Learn • Streamlit • Random Forest • Pandas</span>
+        </div>
+        <p class="print-proj-repo"><strong>GitHub Repository:</strong> https://github.com/24ucs168-dev/airline-ml-project</p>
+        <ul class="print-proj-bullets">
+          <li>Architected an end-to-end binary classification ML web application and data pipeline analyzing 129,880 passenger records (22 attributes), achieving <strong>95.43% test accuracy</strong> and <strong>99.22% ROC-AUC</strong>.</li>
+          <li>Engineered automated preprocessing pipeline with Scikit-Learn <code>ColumnTransformer</code>, median imputation for numericals (handling missing arrival delays), and one-hot encoding for categoricals.</li>
+          <li>Trained and tuned an ensemble Random Forest Classifier, generated confusion matrix heatmaps, classification reports, and extracted top Gini feature importances.</li>
+          <li>Designed an interactive Streamlit application with 4 views (Dashboard, Dataset Explorer, Model Training, Prediction Studio) and real-time confidence scores.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="print-section">
+      <h2 class="print-sec-title">STRENGTHS</h2>
+      <div class="print-strengths-grid">
+        <span>• Quick Learner</span>
+        <span>• Hardworking</span>
+        <span>• Positive Attitude</span>
+        <span>• Teamwork</span>
+        <span>• Time Management</span>
+        <span>• Problem-Solving Skills</span>
+      </div>
+    </section>
+
+    <section class="print-section">
+      <h2 class="print-sec-title">PERSONAL DETAILS</h2>
+      <div class="print-personal-grid">
+        <p><strong>Name:</strong> K. Yamuna</p>
+        <p><strong>Date of Birth:</strong> 08/04/2007</p>
+        <p><strong>Languages Known:</strong> Tamil, English</p>
+        <p><strong>Place:</strong> O. Sowdhapuram</p>
+      </div>
+    </section>
+
+    <section class="print-section print-decl-sec">
+      <h2 class="print-sec-title">DECLARATION</h2>
+      <p class="print-text">
+        I hereby declare that the information provided above is true and correct to the best of my knowledge.
+      </p>
+      <div class="print-signature-row">
+        <div>
+          <p><strong>Place:</strong> O. Sowdhapuram</p>
+          <p><strong>Date:</strong> 23/09/2026</p>
+        </div>
+        <div class="signature-right">
+          <p class="print-sign-cursive">K. Yamuna</p>
+          <p><strong>Signature:</strong> K. Yamuna</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Modern Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <span class="footer-logo">KY</span>
+        <div class="footer-meta">
+          <h3>K. YAMUNA</h3>
+          <p>B.Sc Computer Science Student • Portfolio 2026</p>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <a href="#hero">Home</a>
+        <a href="#about">Objective</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#strengths">Strengths</a>
+        <a href="#declaration">Declaration</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 K. Yamuna. All portfolio content verified from official resume. Designed with 3D WebGL & Glassmorphism.</p>
+        <a href="#hero" class="back-to-top" id="backToTopBtn" aria-label="Back to top">
+          <i class="fa-solid fa-arrow-up"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification Feedback Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Scripts -->
+  <script src="three-bg.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
